@@ -21,23 +21,19 @@
         <!--Heading-->
         <ion-header-bar class="bar-dark">
             <h1 class="title">d e c i d e r</h1>
-            <button class="button button-refresh" data-ng-click="show_chats()">
-                <i class="icon ion-refresh"></i>
-            </button>
         </ion-header-bar>
         
         <ion-content>
-            <div class="card list">
+            <ion-refresher on-refresh="show_chats()"></ion-refresher>
+            <div class="card list" data-ng-repeat="c in chats">
                 <div class="item item-avatar-left">
                     <img src="img/ionic.png" alt=""></img>
-                    <h2>vote creator</h2>
-                    <p>date time</p>
+                    <h2>{{ c.author }}</h2>
+                    <p>{{ c.time | date:'medium' }}</p>
                 </div>
                 <div class="item item-body">
-                    <h1>vote question</h1>
-                    <p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse numquam impedit explicabo harum voluptatibus debitis sed eveniet adipisci, voluptates ut aperiam, consectetur aspernatur corrupti nobis temporibus quod quasi id autem?
-                    </p>
+                    <h1>{{ c.question }}</h1>
+                    <p>{{ c.detail_question }}</p>
                 </div>
             </div>
         </ion-content>
