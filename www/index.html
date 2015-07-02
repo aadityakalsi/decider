@@ -25,6 +25,11 @@
         
         <ion-content>
             <ion-refresher on-refresh="show_chats()"></ion-refresher>
+            <div data-ng-show="chats.length === 0">
+                <center>
+                    <h4>Pull to refresh</h4>
+                </center>
+            </div>
             <div class="card list" data-ng-repeat="c in chats">
                 <div class="item item-avatar-left">
                     <img src="img/ionic.png" alt=""></img>
