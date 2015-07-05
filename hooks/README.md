@@ -20,6 +20,7 @@
 -->
 # Cordova Hooks
 
+<<<<<<< HEAD
 This directory may contain scripts used to customize cordova commands. This
 directory used to exist at `.cordova/hooks`, but has now been moved to the
 project root. Any scripts you add to these directories will be executed before
@@ -30,6 +31,18 @@ __Remember__: Make your scripts executable.
 
 ## Hook Directories
 The following subdirectories will be used for hooks:
+=======
+Cordova Hooks represent special scripts which could be added by application and plugin developers or even by your own build system  to customize cordova commands. Hook scripts could be defined by adding them to the special predefined folder (`/hooks`) or via configuration files (`config.xml` and `plugin.xml`) and run serially in the following order:
+* Application hooks from `/hooks`;
+* Application hooks from `config.xml`;
+* Plugin hooks from `plugins/.../plugin.xml`.
+
+__Remember__: Make your scripts executable.
+
+__Note__: `.cordova/hooks` directory is also supported for backward compatibility, but we don't recommend using it as it is deprecated.
+
+## Supported hook types
+The following hook types are supported:
 
     after_build/
     after_compile/
@@ -73,11 +86,9 @@ All scripts are run from the project's root directory and have the root director
 
 If a script returns a non-zero exit code, then the parent cordova command will be aborted.
 
-
 ## Writing hooks
 
 We highly recommend writting your hooks using Node.js so that they are
 cross-platform. Some good examples are shown here:
 
 [http://devgirl.org/2013/11/12/three-hooks-your-cordovaphonegap-project-needs/](http://devgirl.org/2013/11/12/three-hooks-your-cordovaphonegap-project-needs/)
-
