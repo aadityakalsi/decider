@@ -1,6 +1,6 @@
 {
   "name": "decider",
-  "app_id": "",
+  "app_id": "ede91a9d",
   "gulpStartupTasks": [
     "sass",
     "watch"
